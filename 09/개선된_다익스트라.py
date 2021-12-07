@@ -24,13 +24,17 @@ def dijkstra(start):
 
   while q:
     dist,now = heapq.heappop(q)
+    # dist 가 현재 최단 거리보다 크다면 이미 들렸던 노드
     if distance[now] < dist:
       continue
 
     for i in graph[now]:
       cost = dist + i[1]
+
       if cost < distance[i[0]]:
+        # 노드를 거친다는 뜻
         distance[i[0]] = cost
+        #현재 노드에 간선으로 연결된 노드에 들렸을 때의 총합 거리와 노드번호를 q에 푸쉬 - (총합거리,노드번호)
         heapq.heappush(q,(cost,i[0]))
 
 dijkstra(start)
