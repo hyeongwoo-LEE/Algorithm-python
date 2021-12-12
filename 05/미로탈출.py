@@ -6,7 +6,7 @@ direction = [[-1,0],[1,0],[0,-1],[0,1]] #상하좌우
 
 graph = []
 for i in range(n):
-  graph.append(list(map(int,input().split())))
+  graph.append(list(map(int,input())))
 
 def bfs(x,y):
   queue = deque()
